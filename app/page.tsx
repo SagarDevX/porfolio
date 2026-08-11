@@ -98,12 +98,7 @@ const page = () => {
         <h2>Into Tech, Gym, Books and Anime.</h2>
       </div>
       <Projects />
-      <div className="h-screen w-screen">
-        <h1>hello</h1>
-      </div>
-      <div className="h-screen w-screen">
-        <h1>hello</h1>
-      </div>
+     
     </Container>
 
   )
