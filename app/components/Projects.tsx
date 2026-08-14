@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { motion, Variants } from "motion/react"
-import TechStack, { Tech } from "./TechInProjects"
+import TechInProjects, { Tech } from "./TechInProjects"
 import { IconBrandFramerMotion,IconApi, IconBrandSupabase, IconBrandTailwind,IconBrandNextjs,IconBrandTypescript,IconBrandGithub} from "@tabler/icons-react"
 
 const projects: {
@@ -73,9 +73,9 @@ const cardVariants: Variants = {
 const Projects = () => {
   return (
     <div>
-      <div className="leading-none">
-        <h1 className="text-2xl text-primary text-shadow-2xs tracking-tight">Builds</h1>
-        <p className="text-secondary text-base">Ideas turned into working code</p>
+      <div className="flex flex-col gap-0">
+        <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Builds</h1>
+        <p className="text-secondary text-base leading-tight">Ideas turned into working code</p>
       </div>
 
       <motion.div
@@ -83,7 +83,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ amount: 0.2 }}
-        className="grid grid-cols-3 grid-rows-1 mt-4 gap-4 min-h-80">
+        className="grid grid-cols-3 grid-rows-1 mt-2 gap-4 min-h-80">
         {projects.map((item, idx) => (
           <motion.div
             key={item.name}
@@ -100,8 +100,7 @@ const Projects = () => {
               <h1 className="text-secondary text-lg tracking-wide">{item.name}</h1>
               <h2 className="text-secondary text-sm tracking-tight">{item.description}</h2>
 
-              {/* imported TechStack component, fed THIS project's own tech list */}
-              <TechStack items={item.tech} />
+              <TechInProjects items={item.tech} />
             </div>
           </motion.div>
 

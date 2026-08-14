@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react"
 import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
+import Quote from "./components/Quote";
+import Footer from "./components/Footer";
 
 const socialMedia = [
   {
@@ -98,7 +101,9 @@ const page = () => {
         <h2>Into Tech, Gym, Books and Anime.</h2>
       </div>
       <Projects />
-     
+      <TechStack />
+      <Quote/>
+      <Footer/>
     </Container>
 
   )

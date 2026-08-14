@@ -8,7 +8,7 @@ export type Tech = {
   color: string
 }
 
-export default function TechStack({ items }: { items: Tech[] }) {
+export default function TechInProjects({ items }: { items: Tech[] }) {
   const [hovered, setHovered] = useState<string | null>(null)
 
   return (
@@ -22,12 +22,12 @@ export default function TechStack({ items }: { items: Tech[] }) {
             layout
             onMouseEnter={() => setHovered(t.name)}
             onMouseLeave={() => setHovered(null)}
-            className="flex items-center gap-1 rounded-full border border-dashed border-neutral-300 px-1.5 py-1.5 cursor-pointer  "
+            className="flex items-center gap-1 rounded-full border border-dashed border-neutral-300 px-1 py-1 cursor-pointer  "
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
           >
             <motion.div
               layout
-              className="size-6 flex items-center justify-center rounded-full shrink-0 bg-secondary"
+              className="size-5 flex items-center justify-center rounded-full shrink-0 bg-secondary"
               style={{ backgroundColor: t.color }}
             >
               <Icon size={14} color="white" stroke={2} />
