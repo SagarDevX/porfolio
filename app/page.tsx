@@ -104,6 +104,11 @@ const page = () => {
       <TechStack />
       <Quote/>
       <Footer/>
+
+      <div className="bg-[#FFF3C8] w-full h-screen flex items-center justify-center">
+        <h1 className="text-4xl text-[#279e92] font-bold text-center">hello</h1>
+
+      </div>
     </Container>
 
   )
