@@ -33,7 +33,7 @@ export default function BlogPage() {
                                 </p>
                             </div>
                             <div className="text-sm text-secondary flex flex-row items-center">
-                               <p> Read more </p>
+                                <p> Read more </p>
                                 <IconArrowNarrowRightDashed stroke={1} />
                             </div>
                         </div>
@@ -41,6 +41,15 @@ export default function BlogPage() {
 
                     </Link>
                 ))}
+            </div>
+
+            <div className='w-full mt-16 p-8 rounded-2xl text-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
+                <h1 className='font-(--font-cormorant) text-shadow-xs text-xl italic'>
+                    “You can always edit a bad page. You can’t edit a blank page.”
+                </h1>
+                <p className='w-full text-right text-shadow-md'>
+                    — Jodi Picoult
+                </p>
             </div>
         </div>
     );
