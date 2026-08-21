@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en">
+      lang="en">  
       <body className={`${inter.className} ${CormorantGaramond.variable} antialiased bg-neutral-100 dark:bg-neutral-700`}>
         <Navbar/>
         {children}</body>

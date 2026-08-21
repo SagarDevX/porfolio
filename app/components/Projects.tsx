@@ -72,10 +72,10 @@ const cardVariants: Variants = {
 
 const Projects = () => {
   return (
-    <div>
+    <div className="">
       <div className="flex flex-col gap-0">
         <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Builds</h1>
-        <p className="text-secondary text-base leading-tight">Ideas turned into working code</p>
+        <p className="text-secondary text-sm leading-tight">Ideas turned into working code</p>
       </div>
 
       <motion.div
@@ -97,7 +97,7 @@ const Projects = () => {
               <Image src={item.media} alt="projects" fill className="object-cover overflow-hidden rounded-xl bg-purple-300 group-hover:scale-100 scale-95 transition-transform duration-500 ease-in-out" />
             </div>
             <div className="my-2 p-2">
-              <h1 className="text-secondary text-lg tracking-wide">{item.name}</h1>
+              <h1 className="text-primary text-lg tracking-wide ">{item.name}</h1>
               <h2 className="text-secondary text-sm tracking-tight">{item.description}</h2>
 
               <TechInProjects items={item.tech} />

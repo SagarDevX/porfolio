@@ -23,7 +23,7 @@ const Footer = () => {
     return (
         <div className="flex flex-row gap-8 my-8 pt-8 border-t border-0 border-secondary/30 ">
             <div className=' text-secondary w-1/2'>
-                <h1 className="font-normal">GET IN TOUCH</h1>
+                <h1 className="font-normal text-shadow-2xs">GET IN TOUCH</h1>
                 <h1 className="tracking-tight mt-1">
                     If you have any inquiries, please feel free to reach out. You can contact me via email at  <Link href='https://mail.google.com/mail/u/0/?fs=1&to=sagarpundir25@gmail.com&tf=cm'
                         target="_blank"
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
 
             <div className=" px-4">
-                <h1 className="text-secondary">CONNECT</h1>
+                <h1 className="text-secondary text-shadow-2xs">CONNECT</h1>
                 <div className="flex flex-row gap-4 mt-2">
                     {socialMedia.map(({ icon: Icon, href }, idx) => (
                         <div className="relative border border-x border-neutral-300 p-2 rounded-md text-secondary"

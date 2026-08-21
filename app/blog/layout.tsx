@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter ,Cormorant_Garamond} from "next/font/google";
 import "../globals.css";
 import Container from "../components/container";
+import BlogFooter from "./Blog-footer";
 
 
 const inter = Inter({
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-     <Container className="min-h-screen flex flex-col gap-8 pt-2 prose">{children}</Container>
+     <Container className="min-h-screen flex flex-col justify-between item pt-2 ">
+      {children}
+      <BlogFooter/>
+     </Container>
   );
 }
