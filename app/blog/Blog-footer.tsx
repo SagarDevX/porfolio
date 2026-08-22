@@ -38,10 +38,10 @@ const Navigate = [
 
 const BlogFooter = () => {
     return (
-        <div className="flex flex-row gap-8 mt-8 mb-4 pt-8 border-t border-0 border-secondary/30 ">
+        <div className="min-h-fit flex flex-row gap-8 mt-8 mb-4 py-8 border-t border-0 border-secondary/30 ">
             <div className=' text-secondary w-1/2'>
                 <h1 className="text-sm text-shadow-2xs">NAVIGATE</h1>
-                <div className="flex flex-row gap-4 mt-4">
+                <div className="flex flex-row gap-6 mt-4">
                     {Navigate.map((item,idx) => (
                         <div className="relative text-secondary hover:text-primary" key={idx}>
                             <Link

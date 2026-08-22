@@ -58,7 +58,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
 
         <div className=" w-full flex flex-row justify-between ">
           <div>
-            <h1 className="text-primary text-4xl font-semibold text-shadow-md">
+            <h1 className="text-primary dark:text-secondary text-4xl font-semibold text-shadow-md">
               Sagar Pundir
             </h1>
             <div className="flex flex-row gap-2 text-sm text-secondary ">
@@ -108,11 +108,16 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
         <h2>I care about clean code, simple solutions, and shipping real products.</h2>
         <h2>Into Tech, Gym, Books and Anime.</h2>
       </div>
+
+      <div className="flex flex-col gap-0">
+        <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Builds</h1>
+        <p className="text-secondary text-sm leading-tight">Ideas turned into working code</p>
+      </div>
       <Projects />
       <BlogSection posts={posts} />
       <TechStack />
-      <Quote/>
-      <Footer/>
+      <Quote />
+      <Footer />
 
     </Container>
 

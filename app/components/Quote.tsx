@@ -6,7 +6,7 @@ const Quote = () => {
         <h1 className='font-(--font-cormorant) text-shadow-xs text-xl italic'>
             "The details are not the details. They make the design. "
         </h1>
-        <p className='w-full text-right text-shadow-md'>
+        <p className='w-full text-right text-shadow-xs'>
          — Charles Eames
         </p>
     </div>

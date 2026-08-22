@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-     <Container className="min-h-screen flex flex-col justify-between item pt-2 ">
+     <Container className="min-h-fit flex flex-col justify-between item pt-2 ">
       {children}
       <BlogFooter/>
      </Container>

@@ -8,8 +8,8 @@ export default function BlogPage() {
     return (
         <div className="w-full ">
             <div className="flex flex-col gap-0">
-                <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Blogs</h1>
-                <p className="text-secondary text-sm leading-tight">Just some honest thoughts, experiences, lessons, and ideas from the things I’m learning and going through.</p>
+                <h1 className="text-2xl text-primary font-bold text-shadow-xs tracking-tight leading-tight">Blogs</h1>
+                <p className="text-secondary text-md leading-tight tracking-tight">Just some honest thoughts, experiences, lessons, and ideas from the things I’m learning and going through.</p>
             </div>
             <div className=" mt-8 space-y-6">
                 {posts.map((post) => (
@@ -47,7 +47,7 @@ export default function BlogPage() {
                 <h1 className='font-(--font-cormorant) text-shadow-xs text-xl italic'>
                     “You can always edit a bad page. You can’t edit a blank page.”
                 </h1>
-                <p className='w-full text-right text-shadow-md'>
+                <p className='w-full text-right text-shadow-xs'>
                     — Jodi Picoult
                 </p>
             </div>
