@@ -38,7 +38,7 @@ const TechStack = () => {
       </div>
       <div className="flex flex-wrap gap-1 mt-3 ">
       {Tech.map((item,idx)=>(     
-        <div  className="rounded-md font-semibold transition-colors duration-200 bg-neutral-200 text-primary hover:bg-neutral-300 inline-flex items-center gap-1.5 border border-border/50 px-3 py-1.5 text-sm" key={idx}>
+        <div  className="rounded-md font-semibold transition-colors duration-200 bg-neutral-200 dark:bg-neutral-700 text-primary hover:bg-neutral-300 dark:hover:bg-neutral-600  inline-flex items-center gap-1.5 border border-border/50 px-3 py-1.5 text-sm" key={idx}>
           <item.icon size={20}/>
           <h1>{item.name}</h1>
         </div>

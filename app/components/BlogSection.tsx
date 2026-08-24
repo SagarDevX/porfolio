@@ -26,11 +26,11 @@ export default function BlogSection({ posts }: { posts: Post[] }) {
                     >
                         <div className='flex flex-row justify-between items-start mt-2'>
                             <div >
-                                <h3 className="text-xl font-semibold leading-tight">
+                                <h3 className="text-xl text-primary font-semibold leading-tight">
                                     {post.title}
                                 </h3>
 
-                                <p className="tracking-tight text-sm text-neutral-500 leading-tight">
+                                <p className="tracking-tight text-sm text-secondary leading-tight">
                                     {post.description}
                                 </p>
 

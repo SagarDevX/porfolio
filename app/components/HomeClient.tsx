@@ -58,7 +58,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
 
         <div className=" w-full flex flex-row justify-between ">
           <div>
-            <h1 className="text-primary dark:text-secondary text-4xl font-semibold text-shadow-md">
+            <h1 className="text-primary  text-4xl font-semibold text-shadow-md">
               Sagar Pundir
             </h1>
             <div className="flex flex-row gap-2 text-sm text-secondary ">
@@ -67,7 +67,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-2 py-2 text-secondary bg-neutral-100 h-fit px-4 rounded-3xl hover:shadow-xl shadow-neutral-300 transition-shadow duration-500 ease-in-out">
+          <div className="flex flex-row gap-2 py-2 text-secondary darl:text-black-800 bg-neutral-100 h-fit px-4 rounded-3xl hover:shadow-xl shadow-neutral-300 dark:shadow-neutral-800 transition-shadow duration-500 ease-in-out">
             {socialMedia.map(({ icon: Icon, href, title }, idx) => (
               <div className="relative"
                 key={idx}
@@ -79,7 +79,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="cursor-pointer hover:text-primary transition-all duration-300 ease-in-out" />
+                  <Icon className="cursor-pointer hover:text-neutral-800 dark:text-neutral-500 transition-all duration-300 ease-in-out" />
                 </Link>
 
                 <AnimatePresence>
@@ -89,10 +89,10 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.8, y: 8 }}
                       transition={{ duration: 0.3, type: "spring", stiffness: 450, damping: 20 }}
-                      className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white px-2 py-1 text-xs rounded-md">
+                      className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-neutral-100 dark:text-neutral-800 dark:bg-white px-2 py-1 text-xs rounded-md">
                       {title}
                       <div
-                        className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-primary"
+                        className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-primary dark:bg-white"
                       />
                     </motion.div>)}
                 </AnimatePresence>

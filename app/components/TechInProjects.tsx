@@ -22,7 +22,7 @@ export default function TechInProjects({ items }: { items: Tech[] }) {
             layout
             onMouseEnter={() => setHovered(t.name)}
             onMouseLeave={() => setHovered(null)}
-            className="flex items-center gap-1 rounded-full border border-dashed border-neutral-300 px-1 py-1 cursor-pointer  "
+            className="flex items-center gap-1 rounded-full border border-dashed border-secondary px-1 py-1 cursor-pointer  "
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
           >
             <motion.div

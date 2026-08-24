@@ -31,20 +31,20 @@ export default async function BlogPost({ params }: Props) {
   return (
     <main className="">
       <header className="">
-        <h1 className="text-2xl font-bold tracking-tight leading-loose">
+        <h1 className="text-2xl font-bold tracking-tight leading-loose text-primary">
           {data.title}
         </h1>
 
-        <p className="text-neutral-500 leading-loose">
+        <p className="text-secondary leading-loose ">
           {data.description}
         </p>
 
-        <p className=" text-sm text-neutral-400">
+        <p className=" text-sm text-secondary">
           {data.date}
         </p>
       </header>
 
-      <article className="prose prose-neutral max-w-none prose-p:my-0 prose-p:mb-6 mt-6">
+      <article className="prose prose-neutral max-w-none prose-p:my-0 prose-p:mb-6 mt-6 text-primary">
         <MDXRemote source={content} />
       </article>
     </main>

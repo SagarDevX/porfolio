@@ -40,7 +40,7 @@ const BlogFooter = () => {
     return (
         <div className="min-h-fit flex flex-row gap-8 mt-8 mb-4 py-8 border-t border-0 border-secondary/30 ">
             <div className=' text-secondary w-1/2'>
-                <h1 className="text-sm text-shadow-2xs">NAVIGATE</h1>
+                <h1 className="text-sm text-shadow-2xs text-primary">NAVIGATE</h1>
                 <div className="flex flex-row gap-6 mt-4">
                     {Navigate.map((item,idx) => (
                         <div className="relative text-secondary hover:text-primary" key={idx}>
@@ -59,7 +59,7 @@ const BlogFooter = () => {
             </div>
 
             <div className=" px-4">
-                <h1 className="text-secondary text-sm text-shadow-2xs">CONNECT</h1>
+                <h1 className="text-primary text-sm text-shadow-2xs">CONNECT</h1>
                 <div className="flex flex-row gap-4 mt-2">
                     {socialMedia.map(({ icon: Icon, href }, idx) => (
                         <div className="relative border border-x border-neutral-300 p-2 rounded-md text-secondary"
