@@ -36,7 +36,7 @@ const page = () => {
 
         const data = await response.json();
         if (data.success) {
-            setResult("Form Submitted Successfully");
+            setResult("Message sent. Thanks for reaching out.I'll get back to you soon.");
             event.target.reset();
         } else {
             setResult("Error");
