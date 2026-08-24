@@ -47,12 +47,12 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
   return (
     <Container className="min-h-screen flex flex-col gap-8">
       <div className=" flex flex-row gap-4 pt-4">
-        <div className="h-22 w-22 overflow-hidden rounded-xl">
+        <div className=" overflow-hidden rounded-full">
           <Image
-            src='/avatar1.jpeg'
+            src='/avatar.jpeg'
             alt="avatar"
-            height={100}
-            width={100}
+            height={120}
+            width={120}
             className="object-cover" />
         </div>
 
