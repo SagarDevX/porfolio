@@ -38,7 +38,7 @@ export default function BlogSection({ posts }: { posts: Post[] }) {
                                     <IconCalendarEvent stroke={1} size={18} /> {post.date}
                                 </p>
                             </div>
-                            <div className="text-xs text-neutral-400 flex flex-row items-center">
+                            <div className="w-8 md:w-24 text-xs text-neutral-400 flex flex-col md:flex-row items-center">
                                 <p> Read more </p>
                                 <IconArrowNarrowRightDashed stroke={1} />
                             </div>

@@ -46,19 +46,22 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
 
   return (
     <Container className="min-h-screen flex flex-col gap-8">
-      <div className=" flex flex-row gap-4 pt-4">
+      <div className=" flex flex-row gap-4 pt-4 item">
+
+
         <div className=" overflow-hidden rounded-full">
           <Image
             src='/avatar.jpeg'
             alt="avatar"
             height={120}
             width={120}
-            className="object-cover" />
+            className=" w-full" />
         </div>
 
-        <div className=" w-full flex flex-row justify-between ">
+        <div className=" w-full flex flex-col sm:flex-row gap-1 justify-between ">
+
           <div>
-            <h1 className="text-primary  text-4xl font-semibold text-shadow-md">
+            <h1 className="text-primary text-3xl sm:text-4xl font-semibold text-shadow-md">
               Sagar Pundir
             </h1>
             <div className="flex flex-row gap-2 text-sm text-secondary ">
@@ -67,7 +70,8 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-2 py-2 text-secondary darl:text-black-800 bg-neutral-100 h-fit px-4 rounded-3xl hover:shadow-xl shadow-neutral-300 dark:shadow-neutral-800 transition-shadow duration-500 ease-in-out">
+          <div className="flex flex-row gap-2 py-1 sm:py-2 text-secondary darl:text-black-800 bg-neutral-100 h-fit w-fit px-2 sm:px-4 rounded-3xl hover:shadow-xl shadow-neutral-300 dark:shadow-neutral-800 transition-shadow duration-500 ease-in-out
+          ">
             {socialMedia.map(({ icon: Icon, href, title }, idx) => (
               <div className="relative"
                 key={idx}

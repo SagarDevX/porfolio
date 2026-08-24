@@ -21,7 +21,7 @@ const socialMedia = [
 ]
 const Footer = () => {
     return (
-        <div className="flex flex-row gap-8 my-8 pt-8 border-t border-0 border-secondary/30 ">
+        <div className="w-full flex flex-col md:flex-row  gap-8 my-8 pt-8 border-t border-0 border-secondary/30 ">
             <div className=' text-secondary w-1/2'>
                 <h1 className="font-normal text-shadow-2xs text-primary">GET IN TOUCH</h1>
                 <h1 className="tracking-tight mt-1 text-secondary">
@@ -32,8 +32,8 @@ const Footer = () => {
                 </h1>
             </div>
 
-            <div className=" px-4">
-                <h1 className="text-primary text-shadow-2xs">CONNECT</h1>
+            <div className="md:px-4">
+                <h1 className="text-primary text-shadow-2xs text-start">CONNECT</h1>
                 <div className="flex flex-row gap-4 mt-2">
                     {socialMedia.map(({ icon: Icon, href }, idx) => (
                         <div className="relative border border-x border-neutral-300 p-2 rounded-md text-secondary"
