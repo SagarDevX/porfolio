@@ -23,25 +23,38 @@ const socialMedia = [
 const page = () => {
     const [result, setResult] = useState("");
 
-    const onSubmit = async (event: any) => {
-        event.preventDefault();
-        setResult("Sending....");
-        const formData = new FormData(event.target);
-        formData.append("access_key", "d8de446f-afde-4585-a4cb-d118e9a70d59");
+   const onSubmit = async (event:any) => {
+    event.preventDefault();
+    setResult("Sending....");
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-        const data = await response.json();
-        if (data.success) {
-            setResult("Message sent. Thanks for reaching out.I'll get back to you soon.");
-            event.target.reset();
-        } else {
-            setResult("Error");
-        }
-    };
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+        setResult("Web3Forms access key is missing.");
+        return;
+    }
+
+    formData.append("access_key", accessKey);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+        setResult(
+            "Message sent. Thanks for reaching out. I'll get back to you soon."
+        );
+        form.reset();
+    } else {
+        setResult("Error: " + data.message);
+    }
+};
     return (
         <Container>
             <div className='min-h-fit pb-4'>
@@ -60,7 +73,7 @@ const page = () => {
                     </div>
                     <div className='w-full flex flex-col gap-1 '>
                         <h4 className='text-primary text-sm'>Message</h4>
-                        <textarea name="name" required className='shadow-sm dark:shadow-[0_1px_5px_rgba(120,120,120,0.2)] p-1 bg-neutral-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-primary font-medium'></textarea>
+                        <textarea name="message" required className='shadow-sm dark:shadow-[0_1px_5px_rgba(120,120,120,0.2)] p-1 bg-neutral-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-primary font-medium'></textarea>
                     </div>
                     <button type="submit" className='inset-shadow-xs inset-shadow-neutral-200 dark:inset-shadow-neutral-700 shadow-sm dark:shadow-[0_1px_5px_rgba(120,120,120,0.5)] p-1 bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:border-neutral-700 rounded-lg text-primary font-xs text-sm transition-all duration-300 ease-in-out cursor-pointer'>Send Message</button>
                     <span>{result}</span>
