@@ -1,25 +1,28 @@
 "use client"
-import Image from "next/image";
+import { useRef } from "react"
 import { motion, Variants } from "motion/react"
+import Link from "next/link";
 import TechInProjects, { Tech } from "./TechInProjects"
-import { IconBrandFramerMotion,IconApi, IconBrandSupabase, IconBrandTailwind,IconBrandNextjs,IconBrandTypescript,IconBrandGithub} from "@tabler/icons-react"
+import { IconBrandFramerMotion, IconApi, IconBrandSupabase, IconBrandTailwind, IconBrandNextjs, IconBrandTypescript, IconBrandGithub } from "@tabler/icons-react"
 
 const projects: {
   name: string
   description: string
   href: string
   media: string
+  poster: string
   tech: Tech[]
 }[] = [
   {
     name: "CineZest",
     description: "A Netflix-inspired movie discovery platform with search, genres, watchlists, authentication, and smooth animations.",
-    href: "/",
-    media: "",
-    tech: [    
+    href: "https://cinezest.vercel.app/",
+    media: "project media/cinezest video.mp4",
+    poster: "project media/cinezest.png",
+    tech: [
       { name: "Next.js", icon: IconBrandNextjs, color: "#000000" },
-      { name: "Supabase", icon: IconBrandSupabase  , color: "#24B47E" },
-      { name: "IMDb API", icon: IconApi   , color: "#000000" },
+      { name: "Supabase", icon: IconBrandSupabase, color: "#24B47E" },
+      { name: "IMDb API", icon: IconApi, color: "#000000" },
     ],
   },
   {
@@ -27,6 +30,7 @@ const projects: {
     description: "An interactive GitHub profile explorer for discovering developers, exploring repositories, analyzing detailed coding statistics and activity.",
     href: "/",
     media: "",
+    poster: "",
     tech: [
       { name: "Next.js", icon: IconBrandNextjs, color: "#000000" },
       { name: "TypeScript", icon: IconBrandTypescript, color: "#3178C6" },
@@ -35,9 +39,10 @@ const projects: {
   },
   {
     name: "Project 3",
-    description: "An interactive GitHub profile explorer for discovering developers, exploring repositories, analyzing detailed coding statistics and activity.",
+    description: "lorem",
     href: "/",
     media: "",
+    poster: "",
     tech: [
       { name: "Next.js", icon: IconBrandNextjs, color: "#000000" },
       { name: "Tailwind CSS", icon: IconBrandTailwind, color: "#38BDF8" },
@@ -71,9 +76,12 @@ const cardVariants: Variants = {
 }
 
 const Projects = () => {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const MotionLink = motion(Link);
+
   return (
     <div className="">
-      
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -81,16 +89,32 @@ const Projects = () => {
         viewport={{ amount: 0.2 }}
         className="grid grid-cols-3 grid-rows-1 -mt-3 gap-4 min-h-80">
         {projects.map((item, idx) => (
-          <motion.div
+          <MotionLink
             key={item.name}
+            href={item.href}
             variants={cardVariants}
             transition={{
               duration: 0.3,
               delay: idx * 0.1,
             }}
-            className="group size-full flex-wrap rounded-xl cursor-pointer transition-all duration-300 ease-in hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]">
-            <div className="relative h-48 w-full">
-              <Image src={item.media} alt="projects" fill className="object-cover overflow-hidden rounded-xl bg-purple-300 group-hover:scale-100 scale-95 transition-transform duration-500 ease-in-out" />
+            className="group size-full flex-wrap rounded-xl cursor-pointer transition-all duration-300 ease-in hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]"
+             onMouseEnter={() => videoRefs.current[idx]?.play()}
+              onMouseLeave={() => videoRefs.current[idx]?.pause()}
+            >
+            <div
+              className="relative h-48 w-full"
+             
+            >
+              <video
+                ref={(el) => { videoRefs.current[idx] = el }}
+                src={item.media}
+                poster={item.poster}
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover overflow-hidden rounded-xl group-hover:scale-100 scale-95 transition-transform duration-500 ease-in-out"
+              />
             </div>
             <div className="my-2 p-2">
               <h1 className="text-primary text-lg tracking-wide ">{item.name}</h1>
@@ -98,7 +122,7 @@ const Projects = () => {
 
               <TechInProjects items={item.tech} />
             </div>
-          </motion.div>
+          </MotionLink>
 
         ))}
       </motion.div>
