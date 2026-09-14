@@ -49,7 +49,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
         <div className=" w-full flex flex-col sm:flex-row gap-1 justify-between ">
 
           <div>
-            <h1 className="text-primary text-xl sm:text-4xl font-semibold tracking-[-0.5]">
+            <h1 className="text-primary text-3xl sm:text-4xl font-semibold tracking-[-0.5]">
               Sagar Pundir
             </h1>
             <div className="flex flex-row gap-2 text-sm text-secondary ">

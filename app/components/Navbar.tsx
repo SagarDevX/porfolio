@@ -34,8 +34,8 @@ const Navbar = () => {
     const bgOpacity = useTransform(scrollY, [0, 100], [0.15, 0.25])
 
     return (
-        <Container className='-translate-x-2 fixed top-0 inset-x-0 z-50 '>
-            <motion.div className=' flex flex-row justify-between items-center text-secondary z-50 py-3'
+        <Container className='-translate-x-2 fixed top-0 inset-x-0 z-50 pr-3'>
+            <motion.div className=' flex flex-row justify-between items-center  text-secondary z-50 py-3'
                 style={{
                     backdropFilter: useMotionTemplate`blur(${blur}px)`,
                     backgroundColor: useMotionTemplate`rgba(128,128,128 ${bgOpacity})`
