@@ -57,12 +57,12 @@ const page = () => {
 };
     return (
         <Container>
-            <div className='min-h-fit pb-4'>
+            <div className='min-h-fit pb-4 pt-20'>
                 <div className="flex flex-col gap-0 pt-2 mb-8">
                     <h1 className="text-2xl text-primary font-bold text-shadow-xs tracking-tight leading-tight">Contact Me</h1>
                     <p className="text-secondary text-md leading-tight ">Feel free to get in touch. Let’s talk about ideas, projects, design, or whatever you’re working on.</p>
                 </div>
-                <form onSubmit={onSubmit} className='flex flex-col gap-6 py-8 md:px-12 px-8 my-16 md:mx-28 border border-neutral-300 dark:border-neutral-600 rounded-2xl outline outline-offset-4 outline-neutral-300 dark:outline-neutral-600 '>
+                <form onSubmit={onSubmit} className='flex flex-col gap-6 py-8 md:px-12 px-8 my-8 md:mx-28 border border-neutral-300 dark:border-neutral-600 rounded-2xl outline outline-offset-4 outline-neutral-300 dark:outline-neutral-600 '>
                     <div className='w-full flex flex-col gap-1 '>
                         <h4 className='text-primary text-sm'>Full Name</h4>
                         <input type="text" name="name" required className='shadow-sm dark:shadow-[0_1px_5px_rgba(120,120,120,0.2)] p-1 bg-neutral-50 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-lg text-primary font-medium' />
@@ -79,7 +79,7 @@ const page = () => {
                     <span>{result}</span>
                 </form>
 
-                <div className='flex flex-col items-center justify-between gap-1 pt-7 my-2 border-t border-neutral-300 '>
+                <div className='flex flex-col items-center justify-between gap-1 pt-7 my-6 border-t border-neutral-300 '>
                     <h4 className='text-secondary text-md '>Find me on socials -</h4>
                     <div className='flex flex-row items-center gap-4'>
                         {socialMedia.map(({ icon: Icon, href }, idx) => (

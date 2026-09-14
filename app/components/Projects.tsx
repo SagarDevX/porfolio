@@ -29,8 +29,8 @@ const projects: {
     name: "GitScope",
     description: "An interactive GitHub profile explorer for discovering developers, exploring repositories, analyzing detailed coding statistics and activity.",
     href: "/",
-    media: "",
-    poster: "",
+    media: "project media/cinezest video.mp4",
+    poster: "project media/cinezest.png",
     tech: [
       { name: "Next.js", icon: IconBrandNextjs, color: "#000000" },
       { name: "TypeScript", icon: IconBrandTypescript, color: "#3178C6" },
@@ -41,8 +41,8 @@ const projects: {
     name: "Project 3",
     description: "lorem",
     href: "/",
-    media: "",
-    poster: "",
+    media: "project media/cinezest video.mp4",
+    poster: "project media/cinezest.png",
     tech: [
       { name: "Next.js", icon: IconBrandNextjs, color: "#000000" },
       { name: "Tailwind CSS", icon: IconBrandTailwind, color: "#38BDF8" },
@@ -54,7 +54,7 @@ const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.07,
+      staggerChildren: 0.05,
     }
   }
 }
@@ -62,7 +62,7 @@ const cardVariants: Variants = {
   hidden: {
     y: 15,
     opacity: 0,
-    filter: "blur(5px)"
+    filter: "blur(20px)"
   },
   show: {
     y: 0,
@@ -71,6 +71,7 @@ const cardVariants: Variants = {
     transition: {
       duration: 0.4,
       ease: "easeInOut"
+      
     }
   }
 }
@@ -80,7 +81,7 @@ const Projects = () => {
   const MotionLink = motion(Link);
 
   return (
-    <div className="">
+    <div className="my-4">
 
       <motion.div
         variants={containerVariants}
@@ -93,10 +94,7 @@ const Projects = () => {
             key={item.name}
             href={item.href}
             variants={cardVariants}
-            transition={{
-              duration: 0.3,
-              delay: idx * 0.1,
-            }}
+           
             className="group size-full flex-wrap rounded-xl cursor-pointer transition-all duration-300 ease-in hover:shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]"
              onMouseEnter={() => videoRefs.current[idx]?.play()}
               onMouseLeave={() => videoRefs.current[idx]?.pause()}
@@ -118,7 +116,7 @@ const Projects = () => {
             </div>
             <div className="my-2 p-2">
               <h1 className="text-primary text-lg tracking-wide ">{item.name}</h1>
-              <h2 className="text-secondary text-sm tracking-tight">{item.description}</h2>
+              <h2 className="text-secondary text-sm ">{item.description}</h2>
 
               <TechInProjects items={item.tech} />
             </div>

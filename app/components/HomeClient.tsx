@@ -1,6 +1,5 @@
 "use client"
 import Container from "./container";
-import Image from "next/image"
 import { IconBrandX, IconMail, IconBrandLinkedin, IconBrandGithub } from '@tabler/icons-react';
 import Link from "next/link";
 import { useState } from "react";
@@ -46,22 +45,11 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
 
   return (
     <Container className="min-h-screen flex flex-col gap-8">
-      <div className=" flex flex-row gap-4 pt-4 item">
-
-
-        <div className=" overflow-hidden rounded-full">
-          <Image
-            src='/avatar.jpeg'
-            alt="avatar"
-            height={120}
-            width={120}
-            className=" w-full" />
-        </div>
-
+      <div className=" flex flex-row gap-4 pt-24 item">
         <div className=" w-full flex flex-col sm:flex-row gap-1 justify-between ">
 
           <div>
-            <h1 className="text-primary text-3xl sm:text-4xl font-semibold text-shadow-md">
+            <h1 className="text-primary text-xl sm:text-4xl font-semibold tracking-[-0.5]">
               Sagar Pundir
             </h1>
             <div className="flex flex-row gap-2 text-sm text-secondary ">
@@ -70,8 +58,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
             </div>
           </div>
 
-          <div className="flex flex-row gap-2 py-1 sm:py-2 text-secondary darl:text-black-800 bg-neutral-100 h-fit w-fit px-2 sm:px-4 rounded-3xl hover:shadow-xl shadow-neutral-300 dark:shadow-neutral-800 transition-shadow duration-500 ease-in-out
-          ">
+          <div className="flex flex-row gap-2 py-1 sm:py-2 text-secondary dark:text-black-800  h-fit w-fit px-2 sm:px-4 rounded-3xl ">
             {socialMedia.map(({ icon: Icon, href, title }, idx) => (
               <div className="relative"
                 key={idx}
@@ -83,7 +70,7 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="cursor-pointer hover:text-neutral-800 dark:text-neutral-500 transition-all duration-300 ease-in-out" />
+                  <Icon className="cursor-pointer hover:text-primary  dark:text-neutral-500 transition-all duration-300 ease-in-out" size={24} />
                 </Link>
 
                 <AnimatePresence>
@@ -113,12 +100,25 @@ const HomeClient = ({ posts }: { posts: Post[] }) => {
         <h2>Into Tech, Gym, Books and Anime.</h2>
       </div>
 
-      <div className="flex flex-col gap-0">
+      <div className="flex flex-col gap-0 ">
         <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Builds</h1>
-        <p className="text-secondary text-sm leading-tight">Ideas turned into working code</p>
+        <p className="text-secondary leading-loose text-base">Ideas turned into working code</p>
       </div>
       <Projects />
-      <BlogSection posts={posts} />
+      
+      <div>
+        <div className="flex flex-col gap-0">
+          <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Blogs</h1>
+          <p className="text-secondary leading-loose text-base">What I learn, I write down.</p>
+        </div>
+        <BlogSection posts={posts} />
+        <div className='w-full text-center mt-6'>
+                <Link href="/blog" className="text-sm border border-neutral-300 p-2 rounded-lg hover:shadow transition-all duration-300 ease-in-out ">
+                    Show all blogs
+                </Link>
+            </div>
+      </div>
+      
       <TechStack />
       <Quote />
       <Footer />

@@ -1,6 +1,7 @@
 "use client";
 import { IconCalendarEvent, IconArrowNarrowRightDashed } from '@tabler/icons-react';
 import Link from "next/link";
+import {motion} from "motion/react"
 
 type Post = {
     slug: string;
@@ -11,26 +12,28 @@ type Post = {
 
 export default function BlogSection({ posts }: { posts: Post[] }) {
     return (
-        <section className="mx-auto w-full">
-            <div className="flex flex-col gap-0">
-                <h1 className="text-xl text-primary font-bold text-shadow-2xs tracking-tight leading-tight">Blogs</h1>
-                <p className="text-secondary text-sm leading-tight">What I learn, I write down.</p>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-4 ">
+        <motion.section className="mx-auto w-full"
+        initial={{opacity:0,y:30}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true}}
+        transition={{duration:0.6}}
+        
+        >
+        
+            <div className="mt-8 flex flex-col gap-2 ">
                 {posts.map((post) => (
                     <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
                         className=""
                     >
-                        <div className='flex flex-row justify-between items-start mt-2'>
+                        <div className='flex flex-row justify-between items-start  hover:bg-neutral-200 dark:hover:bg-neutral-800 px-4 py-2  -translate-x-4 transition-all duration-200 ease-in rounded-2xl'>
                             <div >
                                 <h3 className="text-xl text-primary font-semibold leading-tight">
                                     {post.title}
                                 </h3>
 
-                                <p className="tracking-tight text-sm text-secondary leading-tight">
+                                <p className="tracking-tight text-secondary leading-[1.7] text-base">
                                     {post.description}
                                 </p>
 
@@ -47,11 +50,7 @@ export default function BlogSection({ posts }: { posts: Post[] }) {
                     </Link>
                 ))}
             </div>
-            <div className='w-full text-center mt-6'>
-                <Link href="/blog" className="text-sm border border-neutral-300 p-2 rounded-lg hover:shadow transition-all duration-300 ease-in-out ">
-                    Show all blogs
-                </Link>
-            </div>
-        </section>
+            
+        </motion.section>
     );
 }

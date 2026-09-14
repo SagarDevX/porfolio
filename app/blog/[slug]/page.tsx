@@ -29,7 +29,7 @@ export default async function BlogPost({ params }: Props) {
   const { data, content } = matter(fileContent);
 
   return (
-    <main className="">
+    <main className="mt-16">
       <header className="">
         <h1 className="text-2xl font-bold tracking-tight leading-loose text-primary">
           {data.title}
