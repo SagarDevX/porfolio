@@ -25,9 +25,9 @@ export default function BlogSection({ posts }: { posts: Post[] }) {
                     <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className=""
+                        className=" "
                     >
-                        <div className='flex flex-row justify-between items-start  hover:bg-neutral-200 dark:hover:bg-neutral-800 px-4 py-2  -translate-x-4 transition-all duration-200 ease-in rounded-2xl'>
+                        <div className='flex flex-row justify-between items-start gap-4 hover:bg-neutral-200 dark:hover:bg-neutral-800 px-4 py-2  md:-translate-x-4 transition-all duration-200 ease-in rounded-2xl'>
                             <div >
                                 <h3 className="text-xl text-primary font-semibold leading-tight">
                                     {post.title}

@@ -16,8 +16,11 @@ const CormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Sagar Pundir",
   description: "Personal Portfolio ",
+  openGraph: {
+    images: ["/favicon.io"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

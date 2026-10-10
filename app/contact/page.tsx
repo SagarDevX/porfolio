@@ -83,7 +83,7 @@ const page = () => {
                     <h4 className='text-secondary text-md '>Find me on socials -</h4>
                     <div className='flex flex-row items-center gap-4'>
                         {socialMedia.map(({ icon: Icon, href }, idx) => (
-                            <div className="group relative border border-x border-neutral-300 hover:border-secondary p-2 rounded-md text-secondary cursor-pointer transition-all duration-300 ease-in-out"
+                            <div className="group relative border border-x  hover:border-secondary p-2 rounded-md text-secondary cursor-pointer transition-all duration-300 ease-in-out"
                                 key={idx}>
                                 <Link
                                     href={href}

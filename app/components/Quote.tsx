@@ -2,7 +2,7 @@ import React from 'react'
 
 const Quote = () => {
   return (
-    <div className='w-full mt-8 p-8 rounded-2xl text-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-[0_10px_70px_rgba(0,0,0,70)]'>
+    <div className='w-full mt-8 p-8 rounded-2xl text-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-[0_10px_70px_rgba(0,0,0,90)] dark:bg-neutral-800'>
         <h1 className='font-(--font-cormorant) text-shadow-xs text-xl italic'>
             "The details are not the details. They make the design. "
         </h1>

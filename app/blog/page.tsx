@@ -15,7 +15,7 @@ export default function BlogPage() {
                 <BlogSection posts={posts} />
             </div>
 
-            <div className='w-full mt-16 p-8 rounded-2xl text-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-[0_10px_70px_rgba(5,5,5,1)]'>
+            <div className='w-full mt-16 p-8 rounded-2xl text-secondary shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:shadow-[0_10px_70px_rgba(5,5,5,9)] dark:bg-neutral-800'>
                 <h1 className='font-(--font-cormorant) text-shadow-xs text-xl italic'>
                     “You can always edit a bad page. You can’t edit a blank page.”
                 </h1>
