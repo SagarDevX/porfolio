@@ -72,7 +72,7 @@ const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.15,
     },
   },
 }
@@ -104,7 +104,7 @@ const Projects = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.03 }}
         className="grid grid-cols-1 md:grid-cols-3 grid-rows-1 -mt-3 gap-4 min-h-80"
       >
         {projects.map((item, idx) => (
@@ -156,7 +156,6 @@ const Projects = () => {
               )}
             </div>
 
-            {/* Project details */}
             <div className="my-2 p-2">
               <h2 className="text-primary text-lg tracking-wide">
                 {item.name}
